@@ -7,12 +7,10 @@
     .home{
         width: 70%;
     }
-
 }
 
 @media(max-width: 770px){
     .home{
         width: 90%;
     }
-
 }
