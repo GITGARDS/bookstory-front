@@ -13,6 +13,28 @@ title h1 {
   font-weight: 500;
 }
 
+button{
+  margin-bottom: .8rem;
+}
+
 .table {
   width: 100%;
+}
+
+.edit {
+  color: green;
+}
+
+.delete {
+  color:rgb(197, 25, 25);
+  margin-left: .5rem;
+}
+
+.mat-header {
+  width: 5rem;
+}
+
+.livros{
+  color:  blue;
+  margin-left: .6rem;
 }
