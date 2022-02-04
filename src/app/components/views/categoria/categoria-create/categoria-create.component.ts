@@ -2,6 +2,7 @@ import { CategoriaService } from './../categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../categoria.model';
 import { Router } from '@angular/router';
+import { ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 @Component({
   selector: 'app-categoria-create',
@@ -31,6 +32,10 @@ export class CategoriaCreateComponent implements OnInit {
       }
     }    
     );
+  }
+
+  cancel(): void{
+    this.router.navigate(['categorias']);
   }
 
 }
