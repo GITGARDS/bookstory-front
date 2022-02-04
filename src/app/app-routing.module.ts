@@ -2,6 +2,7 @@ import { CategoriaReadComponent } from './components/views/categoria/categoria-r
 import { HomeComponent } from './components/views/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,12 @@ const routes: Routes = [
   {
     path: 'categorias',
     component: CategoriaReadComponent
+  },
+  {
+    path: 'categorias/create',
+    component: CategoriaCreateComponent
   }
+
 ];
 
 @NgModule({
