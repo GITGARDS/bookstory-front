@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from '../categoria.service';
 import { Categoria } from '../categoria.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-categoria-delete',
@@ -28,16 +29,22 @@ export class CategoriaDeleteComponent implements OnInit {
       this.categoria.nome = resposta.nome
       this.categoria.descricao = resposta.descricao    
     }
-
     )
+  }
+
+  delete(): void{
+    this.service.delete(this.categoria.id!).subscribe((resposta) => {
+      this.router.navigate(['categorias'])
+      this.service.mensagem('Categoria deletada com sucesso!')
+    }, err => {
+      this.service.mensagem(err.error.error) 
+    }
+    )  
   }
 
   cancel(): void{
     this.router.navigate(['categorias']);
   }
 
-  deletar(): void{
-
-  }
 
 }
