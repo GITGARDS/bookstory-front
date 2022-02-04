@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from '../categoria.service';
 import { Categoria } from '../categoria.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-categoria-delete',
