@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Livro } from '../livro.model';
 
 @Component({
@@ -7,6 +8,11 @@ import { Livro } from '../livro.model';
   styleUrls: ['./livro-create.component.css']
 })
 export class LivroCreateComponent implements OnInit {
+
+  titulo = new FormControl('',[Validators.minLength(3)])
+  nome_autor = new FormControl('',[Validators.minLength(3)])
+  texto = new FormControl('',[Validators.minLength(3)])
+
 
   livro: Livro = {
     titulo: '',
@@ -19,6 +25,23 @@ export class LivroCreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
+  }
+
+  getMessage(){
+    if (this.titulo.invalid) {
+      return 'O campo TITULO deve conter entre 3 e 100 caracteres';
+    }
+
+    if (this.nome_autor.invalid) {
+      return 'O campo NOME DO AUTOR deve conter entre 3 e 100 caracteres';
+    }
+
+    if (this.texto.invalid) {
+      return 'O campo TEXTO deve conter entre 3 e 2000000 caracteres';
+    }
+
+    return false
   }
 
 create(): void{
